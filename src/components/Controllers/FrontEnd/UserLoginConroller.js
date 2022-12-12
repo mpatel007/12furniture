@@ -96,6 +96,53 @@ function UserLoginConroller() {
 
         });
     }
+
+
+
+    const loginGoogle = async (data) => {
+            // Api Call for Login
+            
+            const userLogin = await adminApi.signinGoogle(data?.profileObj);
+            console.log(userLogin)
+            // return false;
+            if (userLogin) {
+                if (userLogin.data.roleName == "user" && userLogin.data.roleName != "") {
+                    if (userLogin.data.status == 0) {
+                        setLoading(false)
+                        ToastAlert({ msg: userLogin.data.message, msgType: 'error' });
+                    } else if (userLogin.data.status == 1) {
+                        localStorage.clear();
+                        localStorage.setItem('UserAuthToken', userLogin.data.accessToken)
+                        localStorage.setItem('UserData', JSON.stringify(userLogin.data))
+                        user.setLogin(true)
+                        setLoading(false)
+                        ToastAlert({ msg: "Loggedin successfully", msgType: 'success' });
+                        navigate('/home')
+
+                    } else {
+                        setLoading(false)
+                        ToastAlert({ msg: 'Something went wrong', msgType: 'error' });
+                    }
+
+                } else {
+                    setLoading(false)
+                    // console.log(userLogin)
+                    ToastAlert({ msg: 'User not Found', msgType: 'error' });
+                }
+
+            } else {
+                setLoading(false)
+                ToastAlert({ msg: 'Something went wrong', msgType: 'error' });
+            }
+
+
+    }
+
+
+
+
+
+
     const changevalue = (e) => {
         let value = e.target.value;
         setstate({
@@ -112,6 +159,7 @@ function UserLoginConroller() {
                 stateData={state}
                 changevalue={changevalue}
                 login={login}
+                loginGoogle={loginGoogle}
             />
         </>
     )
