@@ -1,0 +1,159 @@
+/* #pageLoader {
+	position: fixed;
+	opacity: 0.5;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url('//upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Phi_fenomeni.gif/50px-Phi_fenomeni.gif') 50% 50% no-repeat rgb(249, 249, 249);
+}
+
+.inputerror{
+	border-color: #dc3545;
+}
+.inputerror:focus {
+	border-color: #dc3545 !important;
+	box-shadow:0 0 0 .2rem rgba(220,53,69,.25) !important;
+} */
+.preloader {
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    z-index: 1051 !important;
+
+  }
+  
+  .preloader span {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-top: 15px;
+  }
+  
+  .preloader .preloader-icon,.inside-loader .preloader-icon {
+    border: 2px solid #eeeeee;
+    border-radius: 50%;
+    border-top: 2px solid #153d77;
+    width: 70px;
+    height: 70px;
+    -webkit-animation: spin 0.5s linear infinite;
+            animation: spin 0.5s linear infinite;
+  }
+  .error{
+	font-size: 80%;
+	margin-top: .25rem;
+	color: #dc3545 !important;
+}
+.inputerror{
+	border-color: #dc3545 !important;
+}
+.inputerror:focus {
+	border-color: #dc3545 !important;
+	box-shadow:0 0 0 .2rem rgba(220,53,69,.25) !important;
+} 
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+  background: #f6f9fc;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+.cus_footer{
+  position: absolute;
+  bottom: -15px;
+  width: 100%;
+  max-width: 100%;
+  display: flex;
+
+  /* position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center; */
+}
+.roundbtn{
+  height: 37px;
+  width: 37px;
+  border-radius: 34px !important;
+}
+.react-confirm-alert-button-group > button {
+  background-color: #153d77 !important;
+}
+@media (min-width: 768px){
+  .ftr {
+    /* position: absolute; */
+    margin-right: 244px;
+  }
+}
+@media (max-width: 768px){
+  .cus_footer {
+    position: unset;
+
+  }
+}
+:root {
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498db;
+  --toastify-color-success: #0c8f10 !important;
+  --toastify-color-warning: #f1c40f;
+  --toastify-color-error: #e74c3c;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+
+  --toastify-icon-color-info: var(--toastify-color-info);
+  --toastify-icon-color-success: var(--toastify-color-success);
+  --toastify-icon-color-warning: var(--toastify-color-warning);
+  --toastify-icon-color-error: var(--toastify-color-error);
+
+  --toastify-toast-width: 320px;
+  --toastify-toast-background: #fff;
+  --toastify-toast-min-height: 64px;
+  --toastify-toast-max-height: 800px;
+  --toastify-font-family: sans-serif;
+  --toastify-z-index: 9999;
+
+  --toastify-text-color-light: #757575;
+  --toastify-text-color-dark: #fff;
+
+  --toastify-text-color-info: #fff;
+  --toastify-text-color-success: #fff;
+  --toastify-text-color-warning: #fff;
+  --toastify-text-color-error: #fff;
+
+  --toastify-spinner-color: #616161;
+  --toastify-spinner-color-empty-area: #e0e0e0;
+
+
+  --toastify-color-progress-light: linear-gradient(to right,
+      #4cd964,
+      #5ac8fa,
+      #007aff,
+      #34aadc,
+      #5856d6,
+      #ff2d55);
+  --toastify-color-progress-dark: #bb86fc;
+  --toastify-color-progress-info: var(--toastify-color-info);
+  --toastify-color-progress-success: var(--toastify-color-success);
+  --toastify-color-progress-warning: var(--toastify-color-warning);
+  --toastify-color-progress-error: var(--toastify-color-error);
+}

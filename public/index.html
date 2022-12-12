@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="description" content="Responsive Bootstrap 4 Admin &amp; Dashboard Template">
+	<meta name="author" content="Bootlab">
+	<div id="moderncss"></div>
+
+	<link rel="stylesheet" href="sweetalert2.min.css">
+	<script>
+		if (location.pathname.startsWith('/admin')) {
+
+		} else {
+			var styles = "@import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css');";
+			var newSS = document.createElement('link');
+			newSS.rel = 'stylesheet';
+			newSS.href = 'data:text/css,' + escape(styles);
+			document.getElementsByTagName("head")[0].appendChild(newSS);
+
+			var styles1 = "@import url('http://192.163.31.11/frontend/css/style.css');";
+			var styleSS = document.createElement('link');
+			styleSS.rel = 'stylesheet';
+			styleSS.href = 'data:text/css,' + escape(styles1);
+			document.getElementsByTagName("body")[0].appendChild(styleSS);
+		}
+	</script>
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+	<title>Ecommerce</title>
+</head>
+
+<body class="theme-blue">
+	<script>
+		if ('serviceWorker' in navigator) {
+			window.addEventListener('load', function () {
+				navigator.serviceWorker.register('../serviceWorker.js').then(function (registration) {
+					// Registration was successful
+					console.log('ServiceWorker registration successful with scope: ', registration.scope);
+				}, function (err) {
+					// registration failed :(
+					console.log('ServiceWorker registration failed:', err);
+				})
+			})
+		}
+	</script>
+	<noscript>You need to enable JavaScript to run this app.</noscript>
+
+	<div id="root"></div>
+
+
+</body>
+
+</html>
