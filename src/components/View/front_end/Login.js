@@ -75,7 +75,7 @@ const Login = (props) => {
                                 onSuccess={onSuccess}
                                 onFailure={onFailure}
                                 cookiePolicy={'single_host_origin'}
-                                isSignedIn={true}
+                                // isSignedIn={true}
                             />
                     </div>
                 </div>
