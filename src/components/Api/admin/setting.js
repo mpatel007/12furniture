@@ -145,6 +145,22 @@ function setting() {
         return res;
     };
 
+    const settingNameValueList = async (AuthToken) => {
+        let res = {};
+
+        await axios({
+            method: "get",
+            url: helper.ApiUrl + "/setting/name-value-list",
+            ContentType: 'application/json',
+            headers: {
+                'x-access-token': AuthToken,
+            },
+        }).then(function (response) {
+            res = response;
+        });
+        return res;
+    };
+
     return {
         uploadHeaderLogo,
         uploadFooterLogo,
@@ -153,6 +169,7 @@ function setting() {
         addPaymentData,
         addGeneralData,
         contactList,
+        settingNameValueList
     };
 
 };

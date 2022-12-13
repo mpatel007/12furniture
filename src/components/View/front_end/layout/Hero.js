@@ -1,5 +1,7 @@
 import banner from '../../../../asset/frontend/img/hero/banner5.jpg'
 import { useLocation, Link } from 'react-router-dom'
+import { getSettingValuebyName } from '../../../Common/Helper';
+
 
 
 const Hero = (props) => {
@@ -83,7 +85,7 @@ const Hero = (props) => {
                                     <i className="fa fa-phone"></i>
                                 </div>
                                 <div className="hero__search__phone__text">
-                                    <h5>+65 11.188.888</h5>
+                                    <h5>{getSettingValuebyName("infoContactNumber") != '' ? getSettingValuebyName("infoContactNumber") : '+65 11.188.888'}</h5>
                                     <span>support 24/7 time</span>
                                 </div>
                             </div>

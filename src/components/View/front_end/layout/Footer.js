@@ -1,4 +1,5 @@
 import logo from '../../../../asset/frontend/img/logo.png'
+import { getSettingValuebyName } from '../../../Common/Helper';
 
 const Footer = () => {
     return (
@@ -11,9 +12,9 @@ const Footer = () => {
                                 <a href="./index.html"><img src={logo} alt="" /></a>
                             </div>
                             <ul>
-                                <li>Address: 60-49 Road 11378 New York</li>
-                                <li>Phone: +65 11.188.888</li>
-                                <li>Email: hello@colorlib.com</li>
+                                <li>Address: {getSettingValuebyName("infoAddress") != '' ? getSettingValuebyName("infoAddress") : '60-49 Road 11378 New York'}</li>
+                                <li>Phone: {getSettingValuebyName("infoContactNumber") != '' ? getSettingValuebyName("infoContactNumber") : '+65 11.188.888'} </li>
+                                <li>Email: {getSettingValuebyName("infoEmail") != '' ? getSettingValuebyName("infoEmail") : 'hello@colorlib.com'} </li>
                             </ul>
                         </div>
                     </div>
@@ -47,10 +48,10 @@ const Footer = () => {
                                 <button type="submit" className="site-btn">Subscribe</button>
                             </form>
                             <div className="footer__widget__social">
-                                <a href="#"><i className="fa fa-facebook"></i></a>
-                                <a href="#"><i className="fa fa-instagram"></i></a>
-                                <a href="#"><i className="fa fa-twitter"></i></a>
-                                <a href="#"><i className="fa fa-pinterest"></i></a>
+                                <a href={getSettingValuebyName("Facebook") != '' ? getSettingValuebyName("Facebook") : '#'}><i className="fa fa-facebook"></i></a>
+                                <a href={getSettingValuebyName("Instagram") != '' ? getSettingValuebyName("Instagram") : '#'}><i className="fa fa-instagram"></i></a>
+                                <a href={getSettingValuebyName("Twitter") != '' ? getSettingValuebyName("Twitter") : '#'}><i className="fa fa-twitter"></i></a>
+                                <a href={getSettingValuebyName("Pinterest") != '' ? getSettingValuebyName("Pinterest") : '#'}><i className="fa fa-pinterest"></i></a>
                             </div>
                         </div>
                     </div>
@@ -70,4 +71,4 @@ const Footer = () => {
     )
 
 }
-export default  Footer;
+export default Footer;
